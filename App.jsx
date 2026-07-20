@@ -450,7 +450,7 @@ function Forgot({ go }) {
   return (
     <AuthShell>
       <button onClick={() => go("login")} style={{ border: "none", background: "none", color: T.inkSoft, display: "inline-flex", alignItems: "center", gap: 4, cursor: "pointer", marginBottom: 12, fontSize: 13.5 }}>
-        <ArrowLeft size={16} /> Back לSign in
+        <ArrowLeft size={16} /> Back to Sign in
       </button>
       <div style={{ fontSize: 19, fontWeight: 900, marginBottom: 2 }}>Reset Password</div>
       {!sent ? (
@@ -485,9 +485,9 @@ function Reset({ go, toast }) {
   };
   return (
     <AuthShell>
-      <div style={{ fontSize: 19, fontWeight: 900, marginBottom: 2 }}>Password newה</div>
+      <div style={{ fontSize: 19, fontWeight: 900, marginBottom: 2 }}>New Password</div>
       <div style={{ fontSize: 13, color: T.inkSoft, marginBottom: 18 }}>Choose a new password for your account</div>
-      <Field label="Password newה"><input style={inputStyle} type="password" value={pw} onChange={(e) => setPw(e.target.value)} /></Field>
+      <Field label="New Password"><input style={inputStyle} type="password" value={pw} onChange={(e) => setPw(e.target.value)} /></Field>
       <Field label="Verify Password"><input style={inputStyle} type="password" value={pw2} onChange={(e) => setPw2(e.target.value)} /></Field>
       {err && <div style={{ background: "#FEECEC", color: T.live, borderRadius: 10, padding: "9px 12px", fontSize: 13, marginBottom: 12, fontWeight: 600 }}>{err}</div>}
       <PrimaryButton onClick={submit} disabled={loading}>{loading ? "Saving…" : "Save Password"}</PrimaryButton>
@@ -801,7 +801,7 @@ function Requests({ data, me, myLoc, openRequest, report, openUser }) {
         {tabs.map((x) => <button key={x.k} onClick={() => setTab(x.k)} style={{ ...chipBtn(tab === x.k), flex: 1, justifyContent: "center" }}>{x.t}</button>)}
       </div>
       {list.length === 0
-        ? <Empty icon="🙋" title="No questions here" sub="Ask what's happening nearby — tap ➕ and choose "Ask Communityunity״." />
+        ? <Empty icon="🙋" title="No questions here" sub='Ask what&apos;s happening nearby — tap ➕ and choose &quot;Ask Community&quot;.' />
         : list.map((r) => <RequestCard key={r.id} r={r} users={data.users} me={me} dist={r._dist} onOpen={() => openRequest(r.id)} onReport={report} onUser={openUser} />)}
     </div>
   );
@@ -1094,7 +1094,7 @@ function CreateStatus({ me, myLoc, groups, presetGroup, onClose, onCreate, canPo
               ? <img src={media.src} alt="" style={{ width: "100%", maxHeight: 240, objectFit: "cover", display: "block" }} />
               : <video src={media.src} controls playsInline style={{ width: "100%", maxHeight: 280, display: "block", background: "#000" }} />}
             <button onClick={() => setMedia(null)} style={{ position: "absolute", top: 8, insetInlineEnd: 8, background: "rgba(0,0,0,.55)", border: "none", color: "#fff", borderRadius: 999, width: 30, height: 30, display: "grid", placeItems: "center", cursor: "pointer" }}><X size={17} /></button>
-            {media.type === "video" && <span style={{ position: "absolute", bottom: 8, insetInlineStart: 8, background: "rgba(0,0,0,.6)", color: "#fff", fontSize: 11, fontWeight: 700, padding: "3px 9px", borderRadius: 999, display: "inline-flex", alignItems: "center", gap: 4 }}><Video size={11} /> {media.duration}ש׳</span>}
+            {media.type === "video" && <span style={{ position: "absolute", bottom: 8, insetInlineStart: 8, background: "rgba(0,0,0,.6)", color: "#fff", fontSize: 11, fontWeight: 700, padding: "3px 9px", borderRadius: 999, display: "inline-flex", alignItems: "center", gap: 4 }}><Video size={11} /> {media.duration}s</span>}
           </div>
         )}
         <input ref={photoRef} type="file" accept="image/*" onChange={pickPhoto} style={{ display: "none" }} />
